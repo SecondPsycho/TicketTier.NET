@@ -20,11 +20,19 @@ namespace TicketTier.Controllers
         }
 
         // GET: Tickets
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-              return _context.Ticket != null ? 
-                          View(await _context.Ticket.ToListAsync()) :
-                          Problem("Entity set 'TicketTierContext.Ticket'  is null.");
+            if (_context.Ticket == null) {
+                return Problem("Entity set 'TicketTierContext.Ticket'  is null.");
+            }
+
+            var tickets = from star in _context.Ticket select star;
+
+            if (!String.IsNullOrEmpty(searchString)) {
+                tickets = tickets.Where(star => star.Title!.Contains(searchString) || star.Description!.Contains(searchString));
+            }
+
+            return View(await tickets.ToListAsync());
         }
 
         // GET: Tickets/Details/5
