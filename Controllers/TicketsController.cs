@@ -26,13 +26,33 @@ namespace TicketTier.Controllers
                 return Problem("Entity set 'TicketTierContext.Ticket'  is null.");
             }
 
+            /*
+
+            var tickets = await (from star in _context.Ticket select star).ToListAsync();
+
+            if (!String.IsNullOrEmpty(searchString)) {
+                //tickets = tickets.Where(ticket => ticket.Title!.Contains(searchString) || ticket.Description!.Contains(searchString));
+                foreach (TicketTier.Models.Ticket ticket in tickets) {
+                    if (!Search(ticket, searchString)) {
+                        Console.WriteLine("Nothing.");
+                    }
+                }
+            }
+            return View(tickets);
+
+            /*/
             var tickets = from star in _context.Ticket select star;
 
             if (!String.IsNullOrEmpty(searchString)) {
-                tickets = tickets.Where(star => star.Title!.Contains(searchString) || star.Description!.Contains(searchString));
+                tickets = tickets.Where(ticket => ticket.Title!.Contains(searchString) || ticket.Description!.Contains(searchString));
             }
-
+            
             return View(await tickets.ToListAsync());
+            //*/
+        }
+
+        private bool Search (TicketTier.Models.Ticket ticket, string searchString) {
+            return ticket.Title!.Contains(searchString) || ticket.Description!.Contains(searchString);
         }
 
         // GET: Tickets/Details/5
