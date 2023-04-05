@@ -7,8 +7,8 @@ public class TicketsController : Controller
 {
     // 
     // GET: /HelloWorld/
-    public string Index()
+    public IActionResult Index()
     {
-        return "Ready for Tickets!";
+        return View();
     }
 }

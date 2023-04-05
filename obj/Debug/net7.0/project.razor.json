@@ -18645,6 +18645,11 @@
   "RootNamespace": "TicketTier",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Index.cshtml",
+      "TargetPath": "Views\\Tickets\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
