@@ -1,4 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TicketTier.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+if (builder.Environment.IsDevelopment()) {
+    builder.Services.AddDbContext<TicketTierContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("TicketTierContext") ?? throw new InvalidOperationException("Connection string 'TicketTierContext' not found.")));
+} else {
+    builder.Services.AddDbContext<TicketTierContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("TicketTierContext") ?? throw new InvalidOperationException("Connection string 'TicketTierContext' not found.")));
+}
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

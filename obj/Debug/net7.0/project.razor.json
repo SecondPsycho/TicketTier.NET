@@ -18645,6 +18645,16 @@
   "RootNamespace": "TicketTier",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Index.cshtml",
+      "TargetPath": "Views\\Tickets\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Create.cshtml",
+      "TargetPath": "Views\\Tickets\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -18652,6 +18662,11 @@
     {
       "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Edit.cshtml",
+      "TargetPath": "Views\\Tickets\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18677,6 +18692,16 @@
     {
       "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Delete.cshtml",
+      "TargetPath": "Views\\Tickets\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\corde\\OneDrive\\Documents\\Coding\\dotNet\\TicketTier\\Views\\Tickets\\Details.cshtml",
+      "TargetPath": "Views\\Tickets\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],
