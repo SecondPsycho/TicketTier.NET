@@ -10,3 +10,5 @@ public class Ticket {
     public DateTime CreationDate { get; set; }
 
 }
+
+//dotnet aspnet-codegenerator controller -name TicketsController -m Ticket -dc TicketTier.Data.TicketTierContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
