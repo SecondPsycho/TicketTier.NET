@@ -26,25 +26,11 @@ namespace TicketTier.Controllers
                 return Problem("Entity set 'TicketTierContext.Ticket'  is null.");
             }
 
-            /*
-
-            var tickets = await (from star in _context.Ticket select star).ToListAsync();
-
-            if (!String.IsNullOrEmpty(searchString)) {
-                //tickets = tickets.Where(ticket => ticket.Title!.Contains(searchString) || ticket.Description!.Contains(searchString));
-                foreach (TicketTier.Models.Ticket ticket in tickets) {
-                    if (!Search(ticket, searchString)) {
-                        Console.WriteLine("Nothing.");
-                    }
-                }
-            }
-            return View(tickets);
-
-            /*/
             var tickets = from star in _context.Ticket select star;
 
             if (!String.IsNullOrEmpty(searchString)) {
-                tickets = tickets.Where(ticket => ticket.Title!.Contains(searchString) || ticket.Description!.Contains(searchString));
+                searchString = searchString.ToLower();
+                tickets = tickets.Where(ticket => ticket.Title!.ToLower().Contains(searchString) || ticket.Description!.ToLower().Contains(searchString));
             }
             
             return View(await tickets.ToListAsync());
@@ -118,7 +104,7 @@ namespace TicketTier.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Description,CreationDate")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Description")] Ticket ticket)
         {
             if (id != ticket.ID)
             {
