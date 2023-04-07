@@ -4,6 +4,7 @@ namespace TicketTier.Models;
 
 public class Ticket {
     public int ID { get; set; }
+    public int Order { get; set; }
     [StringLength(60, MinimumLength = 3)]
     [Required]
     public string? Title { get; set; }

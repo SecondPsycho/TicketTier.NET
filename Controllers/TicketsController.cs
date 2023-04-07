@@ -78,6 +78,8 @@ namespace TicketTier.Controllers
             {
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
+                ticket.Order = ticket.ID;
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(ticket);
@@ -175,5 +177,20 @@ namespace TicketTier.Controllers
         {
           return (_context.Ticket?.Any(e => e.ID == id)).GetValueOrDefault();
         }
+
+        /*
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> MoveDown(int id, [Bind("Order")] Ticket ticket) {
+            return View();
+        }
+
+        /*
+        public async void MoveDown([Bind("Order")] Ticket ticket) {
+            ticket.Order += 1;
+            _context.Update(ticket);
+            await _context.SaveChangesAsync();
+        }
+        //*/
     }
 }

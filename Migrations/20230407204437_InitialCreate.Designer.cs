@@ -11,7 +11,7 @@ using TicketTier.Data;
 namespace TicketTier.Migrations
 {
     [DbContext(typeof(TicketTierContext))]
-    [Migration("20230405190212_InitialCreate")]
+    [Migration("20230407204437_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -32,7 +32,12 @@ namespace TicketTier.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Order")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
