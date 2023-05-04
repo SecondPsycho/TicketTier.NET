@@ -21,7 +21,8 @@ It uses:
 - JavaScript
 - HTML
 - CSS
-And was coded on a Windows 10 operating system using Visual Studio Code.
+
+And it was coded on a Windows 10 operating system using Visual Studio Code.
 
 ## To-Do
 If I ever find the time to keep working on this, my top priorities would be:
