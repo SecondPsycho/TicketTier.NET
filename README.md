@@ -24,7 +24,7 @@ It uses:
 And was coded on a Windows 10 operating system using Visual Studio Code.
 
 ## To-Do
-If I ever find the time to keep working, my top priorities would be:
+If I ever find the time to keep working on this, my top priorities would be:
 - Add User Authentication and Session Data
 - Implement Bootstrap.js
 - Allow Users to reorder Tickets and place them in larger categories, called "Tiers."
